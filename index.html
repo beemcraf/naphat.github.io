@@ -9,49 +9,63 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root{
-      --bg:#f6f7fb; --card:#ffffff; --text:#171a23; --muted:#6b7280; --accent:#3a3a3a;
-      --border:#e6e8ef; --pill:#eff2f7; --shadow:0 8px 24px rgba(10,15,30,.06);
+      --bg:#f6f7fa; --card:#ffffff; --text:#17181c; --muted:#748095; --accent:#353b45;
+      --border:#e6e8ee; --pill:#eef1f7; --shadow:0 8px 26px rgba(0,0,0,.06);
     }
     [data-theme="dark"]{
-      --bg:#14161b; --card:#1c1f26; --text:#f2f4f8; --muted:#a6adbb; --accent:#d6d9e3;
-      --border:#2a2f38; --pill:#232833; --shadow:0 10px 28px rgba(0,0,0,.35);
+      --bg:#17181c; --card:#1f2330; --text:#f2f4f8; --muted:#aab3c5; --accent:#d8deea;
+      --border:#2a2f3d; --pill:#222838; --shadow:0 8px 26px rgba(0,0,0,.38);
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:'Sarabun',system-ui,Segoe UI,Arial;font-size:16px;line-height:1.65}
-    a{color:var(--accent);text-decoration:none}
-    img{display:block;max-width:100%;height:auto;border-radius:12px}
+    *{box-sizing:border-box; transition:color .2s, background .2s, border-color .2s, opacity .2s}
+    html,body{margin:0; background:var(--bg); color:var(--text); font-family:'Sarabun',system-ui,Segoe UI,Arial}
+    a{color:var(--accent); text-decoration:none}
+    .container{width:min(960px,92%); margin:auto}
+    section{padding:32px 0}
+    h1,h2,h3{margin:0 0 10px}
+    h2.section-title{font-family:'Prompt'; font-size:24px; font-weight:700; border-left:4px solid var(--accent); padding-left:12px; margin-bottom:16px}
 
-    .container{width:min(980px,92%);margin:auto}
-    section{padding:40px 0;scroll-margin-top:84px}
+    header.site{position:sticky; top:0; z-index:50; backdrop-filter:blur(10px);
+      background:rgba(255,255,255,.85); border-bottom:1px solid var(--border); padding:10px 0}
+    [data-theme="dark"] header.site{background:rgba(0,0,0,.72)}
+    .nav{display:flex; justify-content:space-between; align-items:center; gap:12px}
+    .brand{font-family:'Prompt'; font-weight:700; display:flex; gap:8px; align-items:center}
+    .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,#9096a6,#c7ccda)}
+    .nav a{margin:0 8px; color:var(--text); opacity:.85; font-size:14px}
+    .nav a:hover{opacity:1}
+    .theme-toggle{border:none; background:none; cursor:pointer; font-size:1.1rem; color:var(--text)}
 
-    header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--border)}
-    [data-theme="dark"] header.site{background:rgba(0,0,0,.6)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
-    .brand{font-family:'Prompt';font-weight:700;display:flex;align-items:center;gap:10px}
-    .brand .dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,#656d7a,#b6bfcc)}
-    nav a{padding:8px 10px;border-radius:8px;color:var(--text);opacity:.85;font-size:14px}
-    nav a:hover{background:var(--pill);opacity:1}
-    .theme-toggle{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:8px 12px;cursor:pointer}
+    .grid{display:grid; gap:16px}
+    .grid.cols-1{grid-template-columns:1fr}
+    .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+    .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
-    .card .prose{max-width:68ch;margin:auto}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow)}
+    .card > * + *{margin-top:12px}        /* ระยะระหว่างบล็อกใน card */
+    .card p{margin:0; line-height:1.85}   /* บรรทัดอ่านสบาย */
     .muted{color:var(--muted)}
-    h1{font-family:'Prompt';font-size:clamp(26px,4.6vw,38px);line-height:1.25;margin:0 0 8px}
-    h2.section-title{font-family:'Prompt';font-size:clamp(20px,3.2vw,24px);font-weight:700;margin:0 0 18px;padding-left:12px;border-left:4px solid var(--accent)}
-    h3{font-family:'Prompt';font-size:18px;margin:0 0 8px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:9px 14px; border-radius:999px; border:1px solid var(--border); background:var(--card); box-shadow:var(--shadow); font-size:14px}
+    .btn:hover{background:var(--accent); color:#fff}
+    .pill{display:inline-block; padding:6px 10px; background:var(--pill); border:1px solid var(--border); border-radius:999px}
 
-    .grid{display:grid;gap:18px}
-    .cols-1{grid-template-columns:1fr}
-    .cols-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-    .cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    /* Projects: vertical stack */
+    .projects.stack .card{margin-bottom:18px}
+    .project-img{width:100%; display:block; border-radius:14px; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,.06)}
 
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);font-size:14px}
-    .btn:hover{background:var(--accent);color:#fff}
+    /* Nice bullets */
+    .nice-bullets{margin:6px 0 0 18px; line-height:1.75}
+    .nice-bullets li{margin:2px 0}
 
-    .img-zoom:hover{transform:scale(1.02)}
+    /* Contact list */
+    .list-reset{list-style:none; padding:0; margin:0}
+    .contact-list li{display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px dashed var(--border)}
+    .contact-list li:last-child{border-bottom:none}
+    .contact-list a{color:var(--text); text-decoration:none}
+    .contact-list a:hover{color:#4e6cff}
+
+    footer{padding:36px 0 18px; color:var(--muted); border-top:1px solid var(--border); text-align:center; font-size:14px}
+    /* small helpers */
     .center{text-align:center}
-    footer{padding:34px 0 16px;color:var(--muted);border-top:1px solid var(--border);text-align:center;font-size:14px}
+    img.round{border-radius:50%; width:150px; height:150px; object-fit:cover}
   </style>
 </head>
 <body>
@@ -67,7 +81,7 @@
         <a href="#education">การศึกษา</a>
         <a href="#certificates">Certificates</a>
         <a href="#goals">เป้าหมาย</a>
-        <a href="#contact">ติดต่อ</a> <!-- ย้าย Contact ไปลิงก์ท้ายสุด -->
+        <a href="#contact">ติดต่อ</a>
       </nav>
       <button class="theme-toggle" id="toggleTheme" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
     </div>
@@ -76,75 +90,69 @@
   <main class="container">
     <!-- Intro -->
     <section id="intro" class="grid cols-2">
-      <div class="card"><div class="prose">
-        <h1>สวัสดีครับ ผมชื่อ <span style="color:var(--accent)">Naphat Wapeesiri</span></h1>
+      <div class="card">
+        <h1>สวัสดีครับ ผมชื่อ <span class="pill" style="font-weight:700">Naphat Wapeesiri</span></h1>
         <p class="muted">นักศึกษาปีที่ 3 คณะวิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏอุดรธานี (UDRU)<br>สนใจด้าน AI, Data Science, Web Dev และ Cybersecurity</p>
-        <div style="margin-top:14px">
+        <div>
           <a class="btn" href="https://github.com/beemcraf" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
           <a class="btn" href="#contact"><i class="fa-solid fa-envelope"></i> ติดต่อ</a>
         </div>
-      </div></div>
+      </div>
       <div class="card center">
-        <img src="a4.jpg" alt="Profile" style="width:152px;height:152px;object-fit:cover;border-radius:50%;margin:auto">
-        <p class="muted" style="margin-top:10px">รูปโปรไฟล์</p>
+        <img src="a4.jpg" alt="Profile" class="round">
+        <p class="muted">รูปโปรไฟล์</p>
       </div>
     </section>
 
     <!-- About -->
     <section id="about">
       <h2 class="section-title">เกี่ยวกับฉัน (About Me)</h2>
-      <div class="card"><div class="prose">
-        <p><strong>ผมชื่อ นายณภัทร วาปีศิริ</strong> (ชื่อเล่น: บีม) ปัจจุบันกำลังศึกษาอยู่ที่ <strong>มหาวิทยาลัยราชภัฏอุดรธานี</strong> และมุ่งมั่นเติบโตในสายงาน <strong>เทคโนโลยีสารสนเทศ (IT)</strong></p>
+      <div class="card">
+        <p><strong>ผมชื่อ นายณภัทร วาปีศิริ</strong> (ชื่อเล่น: บีม) ปัจจุบันกำลังศึกษาอยู่ที่
+          <strong>มหาวิทยาลัยราชภัฏอุดรธานี</strong> และมุ่งมั่นเติบโตในสายงาน <strong>เทคโนโลยีสารสนเทศ (IT)</strong></p>
         <p class="muted">จุดแข็ง: รับผิดชอบสูง ใฝ่เรียนรู้ และพัฒนาทักษะอย่างต่อเนื่อง โดยเฉพาะด้านเทคโนโลยี</p>
         <p class="muted">เวลาว่าง: ศึกษาความรู้จากออนไลน์ ฟังเพลง เล่นเกมเพื่อฝึกการแก้ปัญหา และปรับตัวกับเทคโนโลยีใหม่ได้เร็ว</p>
-      </div></div>
+      </div>
     </section>
 
     <!-- Skills -->
     <section id="skills">
       <h2 class="section-title">ทักษะ (Skills)</h2>
       <div class="grid cols-3">
-        <div class="card"><div class="prose">
+        <div class="card">
           <h3>Programming / Web Development</h3>
-          <p>Python (พื้นฐาน), Java (พื้นฐาน), HTML/CSS (พื้นฐาน), C Language (พื้นฐาน), PHP (พื้นฐาน), SQL (พื้นฐาน)</p>
-        </div></div>
-        <div class="card"><div class="prose">
+          <p>Python(พื้นฐาน), Java(พื้นฐาน), HTML / CSS(พื้นฐาน), C Language(พื้นฐาน), PHP(พื้นฐาน), SQL(พื้นฐาน)</p>
+        </div>
+        <div class="card">
           <h3>Tools</h3>
           <p>GitHub, VS Code, Figma, Google Colab, Microsoft Office</p>
-        </div></div>
+        </div>
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects (vertical stack) -->
     <section id="projects">
       <h2 class="section-title">ผลงาน (Projects)</h2>
-      <div class="grid cols-3" style="place-items:center">
-        <!-- Project 1 -->
-        <article class="card center">
-          <div class="prose"><h3>ออกแบบเว็บขายรองเท้า (Shoe Shop) – Figma</h3></div>
-          <img class="img-zoom" src="a5.png" alt="Shoe Shop Web Design">
-        </article>
-
-        <!-- Project 2 -->
-        <article class="card center">
-          <div class="prose"><h3>ระบบทำนายโรคตับ (Liver Disease Predictor)</h3></div>
-          <img class="img-zoom" src="a6.png" alt="Liver Disease Predictor UI">
-        </article>
-
-        <!-- Project 3: เกมฝึกอังกฤษ -->
+      <div class="projects stack">
         <article class="card">
-          <div class="prose center">
-            <h3>เกมฝึกภาษาอังกฤษพื้นฐาน (English Practice Game)</h3>
-          </div>
-          <img class="img-zoom" src="a8.jfif" alt="English Practice Game UI">
-          <div class="prose" style="margin-top:10px">
-            <ul>
-              <li>โหมดฝึกคำศัพท์พื้นฐาน (Vocabulary) พร้อมคะแนนและเฉลย</li>
-              <li>แบบฝึกหัดเลือกคำตอบ (Multiple Choice) และพิมพ์สะกด (Spelling)</li>
-              <li>มีระดับความยากหลายระดับ ปรับตามผลลัพธ์ของผู้เล่น</li>
-              <li>สรุปผลการเล่นและสถิติเพื่อวางแผนการฝึกต่อไป</li>
-            </ul>
-          </div>
+          <h3>ออกแบบเว็บขายรองเท้า (Shoe Shop) – Figma</h3>
+          <img src="a5.png" class="project-img" alt="Shoe Shop Web Design">
+        </article>
+
+        <article class="card">
+          <h3>ระบบทำนายโรคตับ (Liver Disease Predictor)</h3>
+          <img src="a6.png" class="project-img" alt="Liver Disease Predictor UI">
+        </article>
+
+        <article class="card">
+          <h3>เกมฝึกภาษาอังกฤษพื้นฐาน (English Practice Game)</h3>
+          <img src="a8.jfif" class="project-img" alt="English Practice Game">
+          <ul class="nice-bullets">
+            <li>โหมดฝึกคำศัพท์พื้นฐาน (Vocabulary) พร้อมคะแนนและเฉลย</li>
+            <li>แบบฝึก Multiple Choice และสะกดคำ (Spelling)</li>
+            <li>ปรับระดับความยากอัตโนมัติจากผลลัพธ์ผู้เล่น</li>
+            <li>สรุปผลและสถิติสำหรับวางแผนการฝึกต่อไป</li>
+          </ul>
         </article>
       </div>
     </section>
@@ -153,16 +161,14 @@
     <section id="activities">
       <h2 class="section-title">กิจกรรมที่เคยทำ (Activities)</h2>
       <div class="card">
-        <div class="prose">
-          <ul>
-            <li>พาน้อง ๆ เข้าร่วมกิจกรรมอบรมเรื่อง <strong>การจัดการและการคัดแยกขยะอย่างถูกวิธี</strong> เพื่อสร้างความตระหนักด้านสิ่งแวดล้อม</li>
-            <li>เข้าร่วมการแข่งขัน <strong>วาดภาพและออกแบบรถเก็บขยะเชิงสร้างสรรค์</strong> เพื่อส่งเสริมแนวคิดด้านนวัตกรรมสิ่งแวดล้อม</li>
-            <li>รับหน้าที่เป็น <strong>ช่างภาพและพิธีกร</strong> ในโครงการสอนน้องระดับประถมศึกษาเกี่ยวกับการแยกขยะอย่างมีระบบและสนุกสนาน</li>
-          </ul>
-        </div>
-        <div class="center" style="margin-top:18px">
-          <img src="a7.jfif" alt="กิจกรรมอบรมการจัดการขยะ" style="max-width:720px">
-          <p class="muted" style="margin-top:8px">ภาพกิจกรรม: อบรมและสอนน้อง ๆ เรื่องการจัดการขยะ</p>
+        <ul class="nice-bullets">
+          <li>พาน้อง ๆ เข้าร่วมอบรมเรื่อง <strong>การจัดการและการคัดแยกขยะอย่างถูกวิธี</strong> เพื่อสร้างความตระหนักด้านสิ่งแวดล้อม</li>
+          <li>เข้าร่วมแข่งขัน <strong>วาดภาพและออกแบบรถเก็บขยะเชิงสร้างสรรค์</strong> เพื่อส่งเสริมแนวคิดด้านนวัตกรรมสิ่งแวดล้อม</li>
+          <li>รับหน้าที่เป็น <strong>ช่างภาพและพิธีกร</strong> ในโครงการสอนน้องระดับประถมศึกษาเกี่ยวกับการแยกขยะอย่างมีระบบและสนุกสนาน</li>
+        </ul>
+        <div class="center">
+          <img src="a7.jfif" alt="กิจกรรมอบรมการจัดการขยะ" style="width:100%;max-width:720px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.08)">
+          <p class="muted">ภาพกิจกรรม: อบรมและสอนน้อง ๆ เรื่องการจัดการขยะ</p>
         </div>
       </div>
     </section>
@@ -171,24 +177,24 @@
     <section id="education">
       <h2 class="section-title">การศึกษา (Education)</h2>
       <div class="grid cols-2">
-        <div class="card"><div class="prose">
+        <div class="card">
           <h3>ประวัติการศึกษา</h3>
-          <ul style="list-style:none;padding-left:0">
+          <ul class="nice-bullets" style="margin-left:0">
             <li><strong>ระดับประถม:</strong> โรงเรียนบ้านขมิ้นบ่อโคลน</li>
             <li><strong>ระดับมัธยมต้น:</strong> โรงเรียนอุดรธานีพิทยาคม</li>
             <li><strong>ระดับ ปวช.:</strong> วิทยาลัยเทคนิคอุดรธานี</li>
             <li><strong>กำลังศึกษาอยู่:</strong> มหาวิทยาลัยราชภัฏอุดรธานี</li>
           </ul>
-        </div></div>
-        <div class="card"><div class="prose">
+        </div>
+        <div class="card">
           <h3>Soft Skills</h3>
-          <ul>
+          <ul class="nice-bullets">
             <li>การสื่อสารอย่างมีประสิทธิภาพ</li>
             <li>การทำงานร่วมกับผู้อื่นได้ดี</li>
             <li>การแก้ปัญหาอย่างเป็นระบบ</li>
             <li>การบริหารเวลาและความรับผิดชอบ</li>
           </ul>
-        </div></div>
+        </div>
       </div>
     </section>
 
@@ -197,12 +203,12 @@
       <h2 class="section-title">Certificates</h2>
       <div class="grid cols-2">
         <div class="card center">
-          <div class="prose"><h3>Cisco Networking Academy – Introduction to Cybersecurity</h3></div>
-          <img src="a1.jpg" alt="Certificate: Cybersecurity">
+          <h3>Cisco Networking Academy – Introduction to Cybersecurity</h3>
+          <img src="a1.jpg" alt="Certificate: Cybersecurity" style="width:100%;max-width:680px;border-radius:12px">
         </div>
         <div class="card center">
-          <div class="prose"><h3>Cisco Networking Academy – Ethical Hacker</h3></div>
-          <img src="a2.jpg" alt="Certificate: Ethical Hacker">
+          <h3>Cisco Networking Academy – Ethical Hacker</h3>
+          <img src="a2.jpg" alt="Certificate: Ethical Hacker" style="width:100%;max-width:680px;border-radius:12px">
         </div>
       </div>
     </section>
@@ -210,25 +216,35 @@
     <!-- Goals -->
     <section id="goals">
       <h2 class="section-title">เป้าหมาย</h2>
-      <div class="card"><div class="prose">
+      <div class="card">
         <h3>เป้าหมายในอนาคต</h3>
         <p class="muted">สนใจเส้นทางสายงานเกี่ยวกับ IT/Tech</p>
-      </div></div>
+      </div>
     </section>
 
-    <!-- Contact (ย้ายมาไว้ล่างสุดของหน้า) -->
+    <!-- Contact (last section) -->
     <section id="contact">
       <h2 class="section-title">ติดต่อ (Contact)</h2>
       <div class="grid cols-2">
-        <div class="card"><div class="prose">
-          <p><i class="fa-regular fa-envelope"></i> Email: pomsanbeem9@gmail.com</p>
-          <p><i class="fa-brands fa-github"></i> GitHub: github.com/beemcraf</p>
-          <p><i class="fa-solid fa-phone"></i> โทร: 096-997-1310</p>
-          <p><i class="fa-solid fa-location-dot"></i> ที่อยู่: ต.กุดสระ อ.เมือง จ.อุดรธานี</p>
-        </div></div>
+        <div class="card">
+          <ul class="contact-list list-reset">
+            <li><i class="fa-regular fa-envelope"></i>
+              <a href="mailto:pomsanbeem9@gmail.com">pomsanbeem9@gmail.com</a>
+            </li>
+            <li><i class="fa-brands fa-facebook"></i> บีม ม.</li>
+            <li><i class="fa-brands fa-instagram"></i>
+              <a href="https://instagram.com/_naphat_beem" target="_blank" rel="noreferrer">_naphat_beem</a>
+            </li>
+            <li><i class="fa-brands fa-github"></i>
+              <a href="https://github.com/beemcraf" target="_blank" rel="noreferrer">github.com/beemcraf</a>
+            </li>
+            <li><i class="fa-solid fa-phone"></i> 096-997-1310</li>
+            <li><i class="fa-solid fa-location-dot"></i> ต.กุดสระ อ.เมือง จ.อุดรธานี</li>
+          </ul>
+        </div>
         <div class="card center">
           <h3>QR Code สำหรับติดต่อ (LINE)</h3>
-          <img src="a3.jpg" alt="LINE QR" style="width:200px">
+          <img src="a3.jpg" alt="LINE QR" style="width:220px;max-width:100%;border-radius:12px">
           <p class="muted">สแกนเพื่อแอด LINE ได้ทันที</p>
         </div>
       </div>
@@ -240,7 +256,9 @@
   </footer>
 
   <script>
+    // ปีปัจจุบัน
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Toggle theme
     const btn = document.getElementById('toggleTheme');
     function setTheme(mode){
       document.documentElement.setAttribute('data-theme', mode);
@@ -248,7 +266,7 @@
       btn.innerHTML = mode==='light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     }
     setTheme(localStorage.getItem('theme') || 'light');
-    btn.addEventListener('click', ()=> {
+    btn.addEventListener('click', () => {
       const isDark = document.documentElement.getAttribute('data-theme')==='dark';
       setTheme(isDark ? 'light' : 'dark');
     });
