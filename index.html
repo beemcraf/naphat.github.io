@@ -9,47 +9,49 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root{
-      --bg:#f5f6f8; --card:#ffffff; --text:#1d1d1d; --muted:#777; --accent:#3b3b3b;
-      --border:#d9d9d9; --pill:#efefef; --shadow:0 4px 18px rgba(0,0,0,.06);
+      --bg:#f6f7fb; --card:#ffffff; --text:#171a23; --muted:#6b7280; --accent:#3a3a3a;
+      --border:#e6e8ef; --pill:#eff2f7; --shadow:0 8px 24px rgba(10,15,30,.06);
     }
     [data-theme="dark"]{
-      --bg:#1b1b1b; --card:#252525; --text:#f4f4f4; --muted:#bcbcbc;
-      --accent:#d0d0d0; --border:#383838; --pill:#333; --shadow:0 4px 18px rgba(0,0,0,.35);
+      --bg:#14161b; --card:#1c1f26; --text:#f2f4f8; --muted:#a6adbb; --accent:#d6d9e3;
+      --border:#2a2f38; --pill:#232833; --shadow:0 10px 28px rgba(0,0,0,.35);
     }
-    *{box-sizing:border-box;transition:.25s}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:'Sarabun',system-ui,Segoe UI,Arial}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Sarabun',system-ui,Segoe UI,Arial;font-size:16px;line-height:1.65}
     a{color:var(--accent);text-decoration:none}
+    img{display:block;max-width:100%;height:auto;border-radius:12px}
 
-    header.site{
-      position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
-      background:rgba(255,255,255,.85);border-bottom:1px solid var(--border);padding:10px 0
-    }
-    [data-theme="dark"] header.site{background:rgba(0,0,0,.8)}
-    .container{width:min(900px,92%);margin:auto}
-    .nav{display:flex;justify-content:space-between;align-items:center}
-    .brand{font-family:'Prompt';font-weight:700;display:flex;gap:8px;align-items:center}
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#555,#aaa)}
-    .nav a{margin:0 8px;color:var(--text);opacity:.85;font-size:14px}
-    .nav a:hover{opacity:1}
-    .theme-toggle{border:none;background:none;cursor:pointer;font-size:1.1rem;color:var(--text)}
+    .container{width:min(980px,92%);margin:auto}
+    section{padding:40px 0;scroll-margin-top:84px}
 
-    .btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;
-      border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);font-size:14px}
+    header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--border)}
+    [data-theme="dark"] header.site{background:rgba(0,0,0,.6)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+    .brand{font-family:'Prompt';font-weight:700;display:flex;align-items:center;gap:10px}
+    .brand .dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,#656d7a,#b6bfcc)}
+    nav a{padding:8px 10px;border-radius:8px;color:var(--text);opacity:.85;font-size:14px}
+    nav a:hover{background:var(--pill);opacity:1}
+    .theme-toggle{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:8px 12px;cursor:pointer}
+
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+    .card .prose{max-width:68ch;margin:auto}
+    .muted{color:var(--muted)}
+    h1{font-family:'Prompt';font-size:clamp(26px,4.6vw,38px);line-height:1.25;margin:0 0 8px}
+    h2.section-title{font-family:'Prompt';font-size:clamp(20px,3.2vw,24px);font-weight:700;margin:0 0 18px;padding-left:12px;border-left:4px solid var(--accent)}
+    h3{font-family:'Prompt';font-size:18px;margin:0 0 8px}
+
+    .grid{display:grid;gap:18px}
+    .cols-1{grid-template-columns:1fr}
+    .cols-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+    .cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);font-size:14px}
     .btn:hover{background:var(--accent);color:#fff}
 
-    section{padding:30px 0}
-    h2.section-title{font-family:'Prompt';font-size:22px;font-weight:600;border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px}
-
-    .grid{display:grid;gap:16px}
-    .grid.cols-1{grid-template-columns:1fr}
-    .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-    .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-
-    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
-    .card img{max-width:100%;border-radius:10px}
-    .card img:hover{transform:scale(1.02)} /* ซูมเบาๆ ตอนชี้เมาส์ */
-
-    footer{padding:30px 0 10px;color:var(--muted);border-top:1px solid var(--border);text-align:center;font-size:14px}
+    .img-zoom:hover{transform:scale(1.02)}
+    .center{text-align:center}
+    footer{padding:34px 0 16px;color:var(--muted);border-top:1px solid var(--border);text-align:center;font-size:14px}
   </style>
 </head>
 <body>
@@ -61,159 +63,173 @@
         <a href="#about">เกี่ยวกับฉัน</a>
         <a href="#skills">ทักษะ</a>
         <a href="#projects">ผลงาน</a>
+        <a href="#activities">กิจกรรม</a>
         <a href="#education">การศึกษา</a>
         <a href="#certificates">Certificates</a>
-        <a href="#contact">ติดต่อ</a>
         <a href="#goals">เป้าหมาย</a>
+        <a href="#contact">ติดต่อ</a> <!-- ย้าย Contact ไปลิงก์ท้ายสุด -->
       </nav>
-      <button class="theme-toggle" id="toggleTheme"><i class="fa-solid fa-moon"></i></button>
+      <button class="theme-toggle" id="toggleTheme" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
     </div>
   </header>
 
   <main class="container">
-    <!-- 1. Intro -->
+    <!-- Intro -->
     <section id="intro" class="grid cols-2">
-      <div class="card">
+      <div class="card"><div class="prose">
         <h1>สวัสดีครับ ผมชื่อ <span style="color:var(--accent)">Naphat Wapeesiri</span></h1>
         <p class="muted">นักศึกษาปีที่ 3 คณะวิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏอุดรธานี (UDRU)<br>สนใจด้าน AI, Data Science, Web Dev และ Cybersecurity</p>
-        <div>
+        <div style="margin-top:14px">
           <a class="btn" href="https://github.com/beemcraf" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
           <a class="btn" href="#contact"><i class="fa-solid fa-envelope"></i> ติดต่อ</a>
         </div>
-      </div>
-      <div class="card" style="text-align:center">
-        <img src="a4.jpg" alt="Profile" style="width:150px;height:150px;object-fit:cover;border-radius:50%;margin-bottom:10px">
-        <p class="muted">รูปโปรไฟล์</p>
+      </div></div>
+      <div class="card center">
+        <img src="a4.jpg" alt="Profile" style="width:152px;height:152px;object-fit:cover;border-radius:50%;margin:auto">
+        <p class="muted" style="margin-top:10px">รูปโปรไฟล์</p>
       </div>
     </section>
 
-    <!-- 1.5 About -->
+    <!-- About -->
     <section id="about">
       <h2 class="section-title">เกี่ยวกับฉัน (About Me)</h2>
-      <div class="card" style="line-height:1.9">
-        <p><strong>ผมชื่อ นายณภัทร วาปีศิริ</strong> (ชื่อเล่น: บีม) ปัจจุบันกำลังศึกษาอยู่ที่
-          <strong>มหาวิทยาลัยราชภัฏอุดรธานี</strong> และมุ่งมั่นเติบโตในสายงาน <strong>เทคโนโลยีสารสนเทศ (IT)</strong></p>
+      <div class="card"><div class="prose">
+        <p><strong>ผมชื่อ นายณภัทร วาปีศิริ</strong> (ชื่อเล่น: บีม) ปัจจุบันกำลังศึกษาอยู่ที่ <strong>มหาวิทยาลัยราชภัฏอุดรธานี</strong> และมุ่งมั่นเติบโตในสายงาน <strong>เทคโนโลยีสารสนเทศ (IT)</strong></p>
         <p class="muted">จุดแข็ง: รับผิดชอบสูง ใฝ่เรียนรู้ และพัฒนาทักษะอย่างต่อเนื่อง โดยเฉพาะด้านเทคโนโลยี</p>
         <p class="muted">เวลาว่าง: ศึกษาความรู้จากออนไลน์ ฟังเพลง เล่นเกมเพื่อฝึกการแก้ปัญหา และปรับตัวกับเทคโนโลยีใหม่ได้เร็ว</p>
-      </div>
+      </div></div>
     </section>
 
-    <!-- 2. Skills -->
+    <!-- Skills -->
     <section id="skills">
       <h2 class="section-title">ทักษะ (Skills)</h2>
       <div class="grid cols-3">
-        <div class="card">
+        <div class="card"><div class="prose">
           <h3>Programming / Web Development</h3>
-          <p>Python(พื้นฐาน), Java(พื้นฐาน), HTML / CSS(พื้นฐาน), C Language(พื้นฐาน), PHP(พื้นฐาน), SQL(พื้นฐาน)</p>
-        </div>
-        <div class="card"><h3>Tools</h3><p>GitHub, VS Code, Figma, Google Colab, Microsoft Office</p></div>
+          <p>Python (พื้นฐาน), Java (พื้นฐาน), HTML/CSS (พื้นฐาน), C Language (พื้นฐาน), PHP (พื้นฐาน), SQL (พื้นฐาน)</p>
+        </div></div>
+        <div class="card"><div class="prose">
+          <h3>Tools</h3>
+          <p>GitHub, VS Code, Figma, Google Colab, Microsoft Office</p>
+        </div></div>
       </div>
     </section>
 
-    <!-- 3. Projects -->
+    <!-- Projects -->
     <section id="projects">
       <h2 class="section-title">ผลงาน (Projects)</h2>
-      <div class="grid cols-2" style="place-items:center">
+      <div class="grid cols-3" style="place-items:center">
         <!-- Project 1 -->
-        <article class="card" style="text-align:center">
-          <h3>ออกแบบเว็บขายรองเท้า (Shoe Shop) – Figma</h3>
-          <img src="a5.png" alt="Shoe Shop Web Design"
-               style="width:100%;max-width:800px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.1)">
+        <article class="card center">
+          <div class="prose"><h3>ออกแบบเว็บขายรองเท้า (Shoe Shop) – Figma</h3></div>
+          <img class="img-zoom" src="a5.png" alt="Shoe Shop Web Design">
         </article>
+
         <!-- Project 2 -->
-        <article class="card" style="text-align:center">
-          <h3>ระบบทำนายโรคตับ (Liver Disease Predictor)</h3>
-          <img src="a6.png" alt="Liver Disease Predictor UI"
-               style="width:100%;max-width:800px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.1)">
+        <article class="card center">
+          <div class="prose"><h3>ระบบทำนายโรคตับ (Liver Disease Predictor)</h3></div>
+          <img class="img-zoom" src="a6.png" alt="Liver Disease Predictor UI">
+        </article>
+
+        <!-- Project 3: เกมฝึกอังกฤษ -->
+        <article class="card">
+          <div class="prose center">
+            <h3>เกมฝึกภาษาอังกฤษพื้นฐาน (English Practice Game)</h3>
+          </div>
+          <img class="img-zoom" src="a8.jfif" alt="English Practice Game UI">
+          <div class="prose" style="margin-top:10px">
+            <ul>
+              <li>โหมดฝึกคำศัพท์พื้นฐาน (Vocabulary) พร้อมคะแนนและเฉลย</li>
+              <li>แบบฝึกหัดเลือกคำตอบ (Multiple Choice) และพิมพ์สะกด (Spelling)</li>
+              <li>มีระดับความยากหลายระดับ ปรับตามผลลัพธ์ของผู้เล่น</li>
+              <li>สรุปผลการเล่นและสถิติเพื่อวางแผนการฝึกต่อไป</li>
+            </ul>
+          </div>
         </article>
       </div>
     </section>
 
-    <!-- 3.5 Activities -->
-<section id="activities">
-  <h2 class="section-title">กิจกรรมที่เคยทำ (Activities)</h2>
-  <div class="grid cols-1">
-    <div class="card" style="line-height:1.9; text-align:justify;">
-      <ul style="list-style:circle; padding-left:25px;">
-        <li>พาน้อง ๆ เข้าร่วมกิจกรรมอบรมเรื่อง <strong>การจัดการและการคัดแยกขยะอย่างถูกวิธี</strong> เพื่อสร้างความตระหนักด้านสิ่งแวดล้อม</li>
-        <li>เข้าร่วมการแข่งขัน <strong>วาดภาพและออกแบบรถเก็บขยะเชิงสร้างสรรค์</strong> เพื่อส่งเสริมแนวคิดด้านนวัตกรรมสิ่งแวดล้อม</li>
-        <li>รับหน้าที่เป็น <strong>ช่างภาพและพิธีกร</strong> ในโครงการสอนน้องระดับประถมศึกษาเกี่ยวกับการแยกขยะอย่างมีระบบและสนุกสนาน</li>
-      </ul>
-      <div style="text-align:center; margin-top:20px;">
-        <img src="a7.jfif" alt="กิจกรรมอบรมการจัดการขยะ"
-             style="width:100%; max-width:700px; border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,.1)">
-        <p class="muted" style="margin-top:8px;">ภาพกิจกรรม: อบรมและสอนน้อง ๆ เรื่องการจัดการขยะ</p>
+    <!-- Activities -->
+    <section id="activities">
+      <h2 class="section-title">กิจกรรมที่เคยทำ (Activities)</h2>
+      <div class="card">
+        <div class="prose">
+          <ul>
+            <li>พาน้อง ๆ เข้าร่วมกิจกรรมอบรมเรื่อง <strong>การจัดการและการคัดแยกขยะอย่างถูกวิธี</strong> เพื่อสร้างความตระหนักด้านสิ่งแวดล้อม</li>
+            <li>เข้าร่วมการแข่งขัน <strong>วาดภาพและออกแบบรถเก็บขยะเชิงสร้างสรรค์</strong> เพื่อส่งเสริมแนวคิดด้านนวัตกรรมสิ่งแวดล้อม</li>
+            <li>รับหน้าที่เป็น <strong>ช่างภาพและพิธีกร</strong> ในโครงการสอนน้องระดับประถมศึกษาเกี่ยวกับการแยกขยะอย่างมีระบบและสนุกสนาน</li>
+          </ul>
+        </div>
+        <div class="center" style="margin-top:18px">
+          <img src="a7.jfif" alt="กิจกรรมอบรมการจัดการขยะ" style="max-width:720px">
+          <p class="muted" style="margin-top:8px">ภาพกิจกรรม: อบรมและสอนน้อง ๆ เรื่องการจัดการขยะ</p>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-    <!-- 4. Education -->
+    <!-- Education -->
     <section id="education">
       <h2 class="section-title">การศึกษา (Education)</h2>
       <div class="grid cols-2">
-        <div class="card">
+        <div class="card"><div class="prose">
           <h3>ประวัติการศึกษา</h3>
-          <ul style="list-style:none;padding:0;line-height:1.8">
+          <ul style="list-style:none;padding-left:0">
             <li><strong>ระดับประถม:</strong> โรงเรียนบ้านขมิ้นบ่อโคลน</li>
             <li><strong>ระดับมัธยมต้น:</strong> โรงเรียนอุดรธานีพิทยาคม</li>
             <li><strong>ระดับ ปวช.:</strong> วิทยาลัยเทคนิคอุดรธานี</li>
             <li><strong>กำลังศึกษาอยู่:</strong> มหาวิทยาลัยราชภัฏอุดรธานี</li>
           </ul>
-        </div>
-        <div class="card">
+        </div></div>
+        <div class="card"><div class="prose">
           <h3>Soft Skills</h3>
-          <ul style="list-style:circle;padding-left:20px;line-height:1.8">
+          <ul>
             <li>การสื่อสารอย่างมีประสิทธิภาพ</li>
             <li>การทำงานร่วมกับผู้อื่นได้ดี</li>
             <li>การแก้ปัญหาอย่างเป็นระบบ</li>
             <li>การบริหารเวลาและความรับผิดชอบ</li>
           </ul>
-        </div>
+        </div></div>
       </div>
     </section>
 
-    <!-- 5. Certificates -->
+    <!-- Certificates -->
     <section id="certificates">
       <h2 class="section-title">Certificates</h2>
       <div class="grid cols-2">
-        <div class="card">
-          <h3>Cisco Networking Academy – Introduction to Cybersecurity</h3>
+        <div class="card center">
+          <div class="prose"><h3>Cisco Networking Academy – Introduction to Cybersecurity</h3></div>
           <img src="a1.jpg" alt="Certificate: Cybersecurity">
         </div>
-        <div class="card">
-          <h3>Cisco Networking Academy – Ethical Hacker</h3>
+        <div class="card center">
+          <div class="prose"><h3>Cisco Networking Academy – Ethical Hacker</h3></div>
           <img src="a2.jpg" alt="Certificate: Ethical Hacker">
         </div>
       </div>
     </section>
 
-    <!-- 6. Contact -->
+    <!-- Goals -->
+    <section id="goals">
+      <h2 class="section-title">เป้าหมาย</h2>
+      <div class="card"><div class="prose">
+        <h3>เป้าหมายในอนาคต</h3>
+        <p class="muted">สนใจเส้นทางสายงานเกี่ยวกับ IT/Tech</p>
+      </div></div>
+    </section>
+
+    <!-- Contact (ย้ายมาไว้ล่างสุดของหน้า) -->
     <section id="contact">
       <h2 class="section-title">ติดต่อ (Contact)</h2>
       <div class="grid cols-2">
-        <div class="card">
+        <div class="card"><div class="prose">
           <p><i class="fa-regular fa-envelope"></i> Email: pomsanbeem9@gmail.com</p>
           <p><i class="fa-brands fa-github"></i> GitHub: github.com/beemcraf</p>
           <p><i class="fa-solid fa-phone"></i> โทร: 096-997-1310</p>
           <p><i class="fa-solid fa-location-dot"></i> ที่อยู่: ต.กุดสระ อ.เมือง จ.อุดรธานี</p>
-        </div>
-        <div class="card" style="text-align:center">
+        </div></div>
+        <div class="card center">
           <h3>QR Code สำหรับติดต่อ (LINE)</h3>
           <img src="a3.jpg" alt="LINE QR" style="width:200px">
           <p class="muted">สแกนเพื่อแอด LINE ได้ทันที</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. Goals -->
-    <section id="goals">
-      <h2 class="section-title">เป้าหมาย</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>เป้าหมายในอนาคต</h3>
-          <p class="muted">สนใจเส้นทางสายงานเกี่ยวกับ IT/Tech</p>
         </div>
       </div>
     </section>
@@ -224,10 +240,7 @@
   </footer>
 
   <script>
-    // ปีปัจจุบัน
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Toggle Theme
     const btn = document.getElementById('toggleTheme');
     function setTheme(mode){
       document.documentElement.setAttribute('data-theme', mode);
