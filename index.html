@@ -16,45 +16,47 @@
       --bg:#17181c; --card:#1f2330; --text:#f2f4f8; --muted:#aab3c5; --accent:#d8deea;
       --border:#2a2f3d; --pill:#222838; --shadow:0 8px 26px rgba(0,0,0,.38);
     }
-    *{box-sizing:border-box; transition:color .2s, background .2s, border-color .2s, opacity .2s}
-    html,body{margin:0; background:var(--bg); color:var(--text); font-family:'Sarabun',system-ui,Segoe UI,Arial}
-    a{color:var(--accent); text-decoration:none}
-    .container{width:min(960px,92%); margin:auto}
+    *{box-sizing:border-box;transition:color .2s,background .2s,border-color .2s,opacity .2s}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Sarabun',system-ui,Segoe UI,Arial}
+    a{color:var(--accent);text-decoration:none}
+    .container{width:min(960px,92%);margin:auto}
     section{padding:32px 0}
     h1,h2,h3{margin:0 0 10px}
-    h2.section-title{font-family:'Prompt'; font-size:24px; font-weight:700; border-left:4px solid var(--accent); padding-left:12px; margin-bottom:16px}
-
-    header.site{position:sticky; top:0; z-index:50; backdrop-filter:blur(10px);
-      background:rgba(255,255,255,.85); border-bottom:1px solid var(--border); padding:10px 0}
+    h2.section-title{font-family:'Prompt';font-size:24px;font-weight:700;border-left:4px solid var(--accent);padding-left:12px;margin-bottom:16px}
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+      background:rgba(255,255,255,.85);border-bottom:1px solid var(--border);padding:10px 0}
     [data-theme="dark"] header.site{background:rgba(0,0,0,.72)}
-    .nav{display:flex; justify-content:space-between; align-items:center; gap:12px}
-    .brand{font-family:'Prompt'; font-weight:700; display:flex; gap:8px; align-items:center}
-    .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,#9096a6,#c7ccda)}
-    .nav a{margin:0 8px; color:var(--text); opacity:.85; font-size:14px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .brand{font-family:'Prompt';font-weight:700;display:flex;gap:8px;align-items:center}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#9096a6,#c7ccda)}
+    .nav a{margin:0 8px;color:var(--text);opacity:.85;font-size:14px}
     .nav a:hover{opacity:1}
-    .theme-toggle{border:none; background:none; cursor:pointer; font-size:1.1rem; color:var(--text)}
-
-    .grid{display:grid; gap:16px}
+    .theme-toggle{border:none;background:none;cursor:pointer;font-size:1.1rem;color:var(--text)}
+    .grid{display:grid;gap:16px}
     .grid.cols-1{grid-template-columns:1fr}
     .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-
-    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
     .card > * + *{margin-top:12px}
-    .card p{margin:0; line-height:1.85}
+    .card p{margin:0;line-height:1.85}
     .muted{color:var(--muted)}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:9px 14px; border-radius:999px; border:1px solid var(--border); background:var(--card); box-shadow:var(--shadow); font-size:14px}
-    .btn:hover{background:var(--accent); color:#fff}
-    .project-img{width:100%; display:block; border-radius:14px; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,.06)}
-
-    .nice-bullets{margin:6px 0 0 18px; line-height:1.75}
-    .contact-list{list-style:none; padding:0; margin:0}
-    .contact-list li{display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px dashed var(--border)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;
+      border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);font-size:14px}
+    .btn:hover{background:var(--accent);color:#fff}
+    .project-img{width:100%;display:block;border-radius:14px;object-fit:cover;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+    .nice-bullets{margin:6px 0 0 18px;line-height:1.75}
+    .contact-list{list-style:none;padding:0;margin:0}
+    .contact-list li{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--border)}
     .contact-list li:last-child{border-bottom:none}
-    .contact-list a{color:var(--text); text-decoration:none}
+    .contact-list a{color:var(--text);text-decoration:none}
     .contact-list a:hover{color:#4e6cff}
-    footer{padding:36px 0 18px; color:var(--muted); border-top:1px solid var(--border); text-align:center; font-size:14px}
+    footer{padding:36px 0 18px;color:var(--muted);border-top:1px solid var(--border);text-align:center;font-size:14px}
     .center{text-align:center}
-    img.round{border-radius:50%; width:150px; height:150px; object-fit:cover}
+    img.round{border-radius:50%;width:150px;height:150px;object-fit:cover}
+    /* Education bullets */
+    .edu-list{list-style:none;margin:0;padding:0}
+    .edu-list li{display:flex;gap:12px;align-items:flex-start;margin:14px 0;line-height:1.75}
+    .edu-list .dot{width:10px;height:10px;border-radius:50%;background:#2ecc71;margin-top:8px;flex-shrink:0}
+    .edu-list .edu-meta{color:var(--muted);margin-top:2px;display:block}
   </style>
 </head>
 <body>
@@ -161,11 +163,11 @@
       <div class="grid cols-2">
         <div class="card">
           <h3>ประวัติการศึกษา</h3>
-          <ul class="nice-bullets">
-            <li><strong>ระดับประถม:</strong> โรงเรียนบ้านขมิ้นบ่อโคลน</li>
-            <li><strong>ระดับมัธยมต้น:</strong> โรงเรียนอุดรธานีพิทยาคม</li>
-            <li><strong>ระดับ ปวช.:</strong> วิทยาลัยเทคนิคอุดรธานี</li>
-            <li><strong>กำลังศึกษาอยู่:</strong> มหาวิทยาลัยราชภัฏอุดรธานี</li>
+          <ul class="edu-list">
+            <li><div class="dot"></div><div><strong>ระดับประถม:</strong> โรงเรียนบ้านขมิ้นบ่อโคลน <span class="edu-meta">2554 • เกรดเฉลี่ย 3.43</span></div></li>
+            <li><div class="dot"></div><div><strong>ระดับมัธยมต้น:</strong> โรงเรียนอุดรธานีพิทยาคม <span class="edu-meta">2560 • เกรดเฉลี่ย 3.40</span></div></li>
+            <li><div class="dot"></div><div><strong>ระดับ ปวช.:</strong> วิทยาลัยเทคนิคอุดรธานี <span class="edu-meta">2563 • เกรดเฉลี่ย 3.55</span></div></li>
+            <li><div class="dot"></div><div><strong>กำลังศึกษาอยู่:</strong> มหาวิทยาลัยราชภัฏอุดรธานี <span class="edu-meta">2566 – ปัจจุบัน • เกรดเฉลี่ย 3.35</span></div></li>
           </ul>
         </div>
         <div class="card">
@@ -180,7 +182,7 @@
       </div>
     </section>
 
-    <!-- Certificates (สลับให้ตรง) -->
+    <!-- Certificates -->
     <section id="certificates">
       <h2 class="section-title">Certificates</h2>
       <div class="grid cols-2">
@@ -202,7 +204,7 @@
         <h3>เป้าหมายในอนาคต</h3>
         <p class="muted">
           สนใจเส้นทางสายงานด้าน IT/Tech โดยเฉพาะในสาขา AI, Data Science, Cybersecurity และ Web Development  
-          มีความมุ่งมั่นที่จะพัฒนาทักษะให้พร้อมสำหรับการทำงานจริง และต่อยอดสู่นักพัฒนาซอฟต์แวร์มืออาชีพในอนาคต
+          มุ่งมั่นพัฒนาทักษะเพื่อพร้อมสำหรับการทำงานจริง และต่อยอดสู่นักพัฒนาซอฟต์แวร์มืออาชีพในอนาคต
         </p>
       </div>
     </section>
@@ -248,5 +250,4 @@
       setTheme(isDark ? 'light' : 'dark');
     });
   </script>
-</body>
-</html>
+</
