@@ -37,33 +37,22 @@
     .grid{display:grid; gap:16px}
     .grid.cols-1{grid-template-columns:1fr}
     .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-    .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 
     .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow)}
-    .card > * + *{margin-top:12px}        /* ระยะระหว่างบล็อกใน card */
-    .card p{margin:0; line-height:1.85}   /* บรรทัดอ่านสบาย */
+    .card > * + *{margin-top:12px}
+    .card p{margin:0; line-height:1.85}
     .muted{color:var(--muted)}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:9px 14px; border-radius:999px; border:1px solid var(--border); background:var(--card); box-shadow:var(--shadow); font-size:14px}
     .btn:hover{background:var(--accent); color:#fff}
-    .pill{display:inline-block; padding:6px 10px; background:var(--pill); border:1px solid var(--border); border-radius:999px}
-
-    /* Projects: vertical stack */
-    .projects.stack .card{margin-bottom:18px}
     .project-img{width:100%; display:block; border-radius:14px; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,.06)}
 
-    /* Nice bullets */
     .nice-bullets{margin:6px 0 0 18px; line-height:1.75}
-    .nice-bullets li{margin:2px 0}
-
-    /* Contact list */
-    .list-reset{list-style:none; padding:0; margin:0}
+    .contact-list{list-style:none; padding:0; margin:0}
     .contact-list li{display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px dashed var(--border)}
     .contact-list li:last-child{border-bottom:none}
     .contact-list a{color:var(--text); text-decoration:none}
     .contact-list a:hover{color:#4e6cff}
-
     footer{padding:36px 0 18px; color:var(--muted); border-top:1px solid var(--border); text-align:center; font-size:14px}
-    /* small helpers */
     .center{text-align:center}
     img.round{border-radius:50%; width:150px; height:150px; object-fit:cover}
   </style>
@@ -91,10 +80,10 @@
     <!-- Intro -->
     <section id="intro" class="grid cols-2">
       <div class="card">
-        <h1>สวัสดีครับ ผมชื่อ <span class="pill" style="font-weight:700">Naphat Wapeesiri</span></h1>
+        <h1>สวัสดีครับ ผมชื่อ <span style="font-weight:700;color:var(--accent)">Naphat Wapeesiri</span></h1>
         <p class="muted">นักศึกษาปีที่ 3 คณะวิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏอุดรธานี (UDRU)<br>สนใจด้าน AI, Data Science, Web Dev และ Cybersecurity</p>
         <div>
-          <a class="btn" href="https://github.com/beemcraf" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a class="btn" href="https://github.com/beemcraf" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
           <a class="btn" href="#contact"><i class="fa-solid fa-envelope"></i> ติดต่อ</a>
         </div>
       </div>
@@ -109,16 +98,15 @@
       <h2 class="section-title">เกี่ยวกับฉัน (About Me)</h2>
       <div class="card">
         <p><strong>ผมชื่อ นายณภัทร วาปีศิริ</strong> (ชื่อเล่น: บีม) ปัจจุบันกำลังศึกษาอยู่ที่
-          <strong>มหาวิทยาลัยราชภัฏอุดรธานี</strong> และมุ่งมั่นเติบโตในสายงาน <strong>เทคโนโลยีสารสนเทศ (IT)</strong></p>
+        <strong>มหาวิทยาลัยราชภัฏอุดรธานี</strong> และมุ่งมั่นเติบโตในสายงาน <strong>เทคโนโลยีสารสนเทศ (IT)</strong></p>
         <p class="muted">จุดแข็ง: รับผิดชอบสูง ใฝ่เรียนรู้ และพัฒนาทักษะอย่างต่อเนื่อง โดยเฉพาะด้านเทคโนโลยี</p>
-        <p class="muted">เวลาว่าง: ศึกษาความรู้จากออนไลน์ ฟังเพลง เล่นเกมเพื่อฝึกการแก้ปัญหา และปรับตัวกับเทคโนโลยีใหม่ได้เร็ว</p>
       </div>
     </section>
 
     <!-- Skills -->
     <section id="skills">
       <h2 class="section-title">ทักษะ (Skills)</h2>
-      <div class="grid cols-3">
+      <div class="grid cols-2">
         <div class="card">
           <h3>Programming / Web Development</h3>
           <p>Python(พื้นฐาน), Java(พื้นฐาน), HTML / CSS(พื้นฐาน), C Language(พื้นฐาน), PHP(พื้นฐาน), SQL(พื้นฐาน)</p>
@@ -130,43 +118,40 @@
       </div>
     </section>
 
-    <!-- Projects (vertical stack) -->
+    <!-- Projects -->
     <section id="projects">
       <h2 class="section-title">ผลงาน (Projects)</h2>
-      <div class="projects stack">
-        <article class="card">
-          <h3>ออกแบบเว็บขายรองเท้า (Shoe Shop) – Figma</h3>
-          <img src="a5.png" class="project-img" alt="Shoe Shop Web Design">
-        </article>
-
-        <article class="card">
-          <h3>ระบบทำนายโรคตับ (Liver Disease Predictor)</h3>
-          <img src="a6.png" class="project-img" alt="Liver Disease Predictor UI">
-        </article>
-
-        <article class="card">
-          <h3>เกมฝึกภาษาอังกฤษพื้นฐาน (English Practice Game)</h3>
-          <img src="a8.jfif" class="project-img" alt="English Practice Game">
-          <ul class="nice-bullets">
-            <li>โหมดฝึกคำศัพท์พื้นฐาน (Vocabulary) พร้อมคะแนนและเฉลย</li>
-          </ul>
-        </article>
-      </div>
+      <article class="card">
+        <h3>ออกแบบเว็บขายรองเท้า (Shoe Shop) – Figma</h3>
+        <img src="a5.png" class="project-img" alt="Shoe Shop Web Design">
+      </article>
+      <article class="card">
+        <h3>ระบบทำนายโรคตับ (Liver Disease Predictor)</h3>
+        <img src="a6.png" class="project-img" alt="Liver Disease Predictor">
+      </article>
+      <article class="card">
+        <h3>เกมฝึกภาษาอังกฤษพื้นฐาน (English Practice Game)</h3>
+        <img src="a8.jfif" class="project-img" alt="English Game">
+        <ul class="nice-bullets">
+          <li>โหมดฝึกคำศัพท์พื้นฐาน (Vocabulary) พร้อมคะแนนและเฉลย</li>
+          <li>แบบฝึก Multiple Choice และ Spelling</li>
+          <li>มีการปรับระดับความยากตามผลลัพธ์ของผู้เล่น</li>
+          <li>สรุปผลและสถิติสำหรับวางแผนการฝึกต่อไป</li>
+        </ul>
+      </article>
     </section>
 
     <!-- Activities -->
     <section id="activities">
       <h2 class="section-title">กิจกรรมที่เคยทำ (Activities)</h2>
-      <div class="card">
-        <ul class="nice-bullets">
-          <li>พาน้อง ๆ เข้าร่วมอบรมเรื่อง <strong>การจัดการและการคัดแยกขยะอย่างถูกวิธี</strong> เพื่อสร้างความตระหนักด้านสิ่งแวดล้อม</li>
-          <li>เข้าร่วมแข่งขัน <strong>วาดภาพและออกแบบรถเก็บขยะเชิงสร้างสรรค์</strong> เพื่อส่งเสริมแนวคิดด้านนวัตกรรมสิ่งแวดล้อม</li>
-          <li>รับหน้าที่เป็น <strong>ช่างภาพและพิธีกร</strong> ในโครงการสอนน้องระดับประถมศึกษาเกี่ยวกับการแยกขยะอย่างมีระบบและสนุกสนาน</li>
+      <div class="card center">
+        <ul class="nice-bullets" style="text-align:left;display:inline-block">
+          <li>พาน้อง ๆ เข้าร่วมอบรมเรื่อง <strong>การจัดการและการคัดแยกขยะอย่างถูกวิธี</strong></li>
+          <li>เข้าร่วมแข่งขัน <strong>วาดภาพและออกแบบรถเก็บขยะเชิงสร้างสรรค์</strong></li>
+          <li>รับหน้าที่เป็น <strong>ช่างภาพและพิธีกร</strong> ในโครงการสอนน้องระดับประถมศึกษา</li>
         </ul>
-        <div class="center">
-          <img src="a7.jfif" alt="กิจกรรมอบรมการจัดการขยะ" style="width:100%;max-width:720px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.08)">
-          <p class="muted">ภาพกิจกรรม: อบรมและสอนน้อง ๆ เรื่องการจัดการขยะ</p>
-        </div>
+        <img src="a7.jfif" alt="กิจกรรมอบรมการจัดการขยะ" style="width:100%;max-width:700px;border-radius:14px;margin-top:14px">
+        <p class="muted">ภาพกิจกรรม: อบรมและสอนน้อง ๆ เรื่องการจัดการขยะ</p>
       </div>
     </section>
 
@@ -176,7 +161,7 @@
       <div class="grid cols-2">
         <div class="card">
           <h3>ประวัติการศึกษา</h3>
-          <ul class="nice-bullets" style="margin-left:0">
+          <ul class="nice-bullets">
             <li><strong>ระดับประถม:</strong> โรงเรียนบ้านขมิ้นบ่อโคลน</li>
             <li><strong>ระดับมัธยมต้น:</strong> โรงเรียนอุดรธานีพิทยาคม</li>
             <li><strong>ระดับ ปวช.:</strong> วิทยาลัยเทคนิคอุดรธานี</li>
@@ -187,7 +172,7 @@
           <h3>Soft Skills</h3>
           <ul class="nice-bullets">
             <li>การสื่อสารอย่างมีประสิทธิภาพ</li>
-            <li>การทำงานร่วมกับผู้อื่นได้ดี</li>
+            <li>การทำงานร่วมกับผู้อื่น</li>
             <li>การแก้ปัญหาอย่างเป็นระบบ</li>
             <li>การบริหารเวลาและความรับผิดชอบ</li>
           </ul>
@@ -195,46 +180,43 @@
       </div>
     </section>
 
-    <!-- Certificates -->
+    <!-- Certificates (สลับให้ตรง) -->
     <section id="certificates">
       <h2 class="section-title">Certificates</h2>
       <div class="grid cols-2">
         <div class="card center">
-          <h3>Cisco Networking Academy – Introduction to Cybersecurity</h3>
-          <img src="a1.jpg" alt="Certificate: Cybersecurity" style="width:100%;max-width:680px;border-radius:12px">
+          <h3>Cisco Networking Academy – Ethical Hacker</h3>
+          <img src="a1.jpg" alt="Certificate: Ethical Hacker" style="width:100%;max-width:700px;border-radius:12px">
         </div>
         <div class="card center">
-          <h3>Cisco Networking Academy – Ethical Hacker</h3>
-          <img src="a2.jpg" alt="Certificate: Ethical Hacker" style="width:100%;max-width:680px;border-radius:12px">
+          <h3>Cisco Networking Academy – Introduction to Cybersecurity</h3>
+          <img src="a2.jpg" alt="Certificate: Cybersecurity" style="width:100%;max-width:700px;border-radius:12px">
         </div>
       </div>
     </section>
 
     <!-- Goals -->
     <section id="goals">
-      <h2 class="section-title">เป้าหมาย</h2>
+      <h2 class="section-title">เป้าหมาย (Goals)</h2>
       <div class="card">
         <h3>เป้าหมายในอนาคต</h3>
-        <p class="muted">สนใจเส้นทางสายงานเกี่ยวกับ IT/Tech</p>
+        <p class="muted">
+          สนใจเส้นทางสายงานด้าน IT/Tech โดยเฉพาะในสาขา AI, Data Science, Cybersecurity และ Web Development  
+          มีความมุ่งมั่นที่จะพัฒนาทักษะให้พร้อมสำหรับการทำงานจริง และต่อยอดสู่นักพัฒนาซอฟต์แวร์มืออาชีพในอนาคต
+        </p>
       </div>
     </section>
 
-    <!-- Contact (last section) -->
+    <!-- Contact -->
     <section id="contact">
       <h2 class="section-title">ติดต่อ (Contact)</h2>
       <div class="grid cols-2">
         <div class="card">
-          <ul class="contact-list list-reset">
-            <li><i class="fa-regular fa-envelope"></i>
-              <a href="mailto:pomsanbeem9@gmail.com">pomsanbeem9@gmail.com</a>
-            </li>
+          <ul class="contact-list">
+            <li><i class="fa-regular fa-envelope"></i> <a href="mailto:pomsanbeem9@gmail.com">pomsanbeem9@gmail.com</a></li>
             <li><i class="fa-brands fa-facebook"></i> บีม ม.</li>
-            <li><i class="fa-brands fa-instagram"></i>
-              <a href="https://instagram.com/_naphat_beem" target="_blank" rel="noreferrer">_naphat_beem</a>
-            </li>
-            <li><i class="fa-brands fa-github"></i>
-              <a href="https://github.com/beemcraf" target="_blank" rel="noreferrer">github.com/beemcraf</a>
-            </li>
+            <li><i class="fa-brands fa-instagram"></i> <a href="https://instagram.com/_naphat_beem" target="_blank">_naphat_beem</a></li>
+            <li><i class="fa-brands fa-github"></i> <a href="https://github.com/beemcraf" target="_blank">github.com/beemcraf</a></li>
             <li><i class="fa-solid fa-phone"></i> 096-997-1310</li>
             <li><i class="fa-solid fa-location-dot"></i> ต.กุดสระ อ.เมือง จ.อุดรธานี</li>
           </ul>
@@ -253,9 +235,7 @@
   </footer>
 
   <script>
-    // ปีปัจจุบัน
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Toggle theme
     const btn = document.getElementById('toggleTheme');
     function setTheme(mode){
       document.documentElement.setAttribute('data-theme', mode);
@@ -263,7 +243,7 @@
       btn.innerHTML = mode==='light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     }
     setTheme(localStorage.getItem('theme') || 'light');
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', ()=> {
       const isDark = document.documentElement.getAttribute('data-theme')==='dark';
       setTheme(isDark ? 'light' : 'dark');
     });
