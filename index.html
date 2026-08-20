@@ -110,12 +110,12 @@
       <h2 class="section-title">ทักษะ (Skills)</h2>
       <div class="grid cols-2">
         <div class="card">
-          <h3>Programming / Web Development</h3>
-          <p>Python(พื้นฐาน), Java(พื้นฐาน), HTML / CSS(พื้นฐาน), C Language(พื้นฐาน), PHP(พื้นฐาน), SQL(พื้นฐาน)</p>
+          <h3>Programming & Web Development</h3>
+          <p>JavaScript, TypeScript, React, HTML5 / CSS3, Tailwind CSS, PHP, Python, SQL, Java (พื้นฐาน), C Language (พื้นฐาน)</p>
         </div>
         <div class="card">
-          <h3>Tools</h3>
-          <p>GitHub, VS Code, Figma, Google Colab, Microsoft Office</p>
+          <h3>Tools & Technologies</h3>
+          <p>Node.js / Express, Git & GitHub, Vite, REST APIs, VS Code, Figma, Google Colab, Microsoft Office</p>
         </div>
       </div>
     </section>
@@ -124,16 +124,39 @@
     <section id="projects">
       <h2 class="section-title">ผลงาน (Projects)</h2>
       <article class="card">
+        <h3>ระบบจองบริการนวดแผนไทยและสปาระดับพรีเมียม (Chang Thai Booking Portal)</h3>
+        <img src="chang-thai-booking.png" class="project-img" alt="Chang Thai Booking Portal">
+        <p class="muted">เว็บแอปพลิเคชันระบบจองบริการนวดแผนไทยและสปาแบบครบวงจรสำหรับ Chang Thai Authentic Thai Bodywork (Park Ridge, IL)</p>
+        <ul class="nice-bullets">
+          <li><strong>Multi-Step Booking Flow:</strong> ระบบขั้นตอนการจองแบบ 5 สเต็ป (Services → Duration → Time → Details → Confirm) พร้อมแถบแสดงความคืบหน้า (Progress Bar)</li>
+          <li><strong>Treatment Category & Live Search:</strong> จัดหมวดหมู่บริการ (Master Rituals, Signature, Essential Care, Express Focus) พร้อมระบบค้นหาทรีตเมนต์แบบเรียลไทม์</li>
+          <li><strong>Dynamic Duration & Pricing:</strong> เลือกระยะเวลานวด (60 / 90 / 120 นาที) และแสดงช่วงราคาที่ปรับเปลี่ยนตามเวลาที่เลือก</li>
+          <li><strong>Time Slot & Admin Management:</strong> ระบบเลือกวัน-เวลา ตรวจสอบช่วงเวลาว่าง ป้องกันการจองซ้ำ และแดชบอร์ดจัดการคิว</li>
+          <li><strong>Tech Stack:</strong> React 19, TypeScript, Tailwind CSS, Express, Node.js, Lucide Icons, Motion</li>
+        </ul>
+      </article>
+      <article class="card">
         <h3>ออกแบบเว็บขายรองเท้า (Shoe Shop) – Figma</h3>
         <img src="a5.png" class="project-img" alt="Shoe Shop Web Design">
+        <p class="muted">การออกแบบหน้าเว็บไซต์ร้านขายรองเท้าและระบบ E-Commerce ด้วย Figma</p>
+        <ul class="nice-bullets">
+          <li>ออกแบบ Wireframe, UI/UX และ Interactive Prototype จำลองขั้นตอนการสั่งซื้อ</li>
+          <li>เน้นการจัดวาง Layout ที่ทันสมัย สบายตา และใช้งานง่ายบนทุกอุปกรณ์</li>
+        </ul>
       </article>
       <article class="card">
         <h3>ระบบทำนายโรคตับ (Liver Disease Predictor)</h3>
-        <img src="a6.png" class="project-img" alt="Liver Disease Predictor">
+        <img src="a6.png" class="project-img" alt="Liver Disease Predictor" style="max-width: 380px; margin: 12px auto;">
+        <p class="muted">โมเดล Machine Learning สำหรับวิเคราะห์และทำนายความเสี่ยงโรคตับจากข้อมูลสุขภาพ</p>
+        <ul class="nice-bullets">
+          <li>เตรียมและวิเคราะห์ชุดข้อมูลทางการแพทย์ (Data Preprocessing & Data Cleaning)</li>
+          <li>เทรนและประเมินประสิทธิภาพโมเดล Classification ในการจำแนกความเสี่ยง</li>
+        </ul>
       </article>
       <article class="card">
         <h3>เกมฝึกภาษาอังกฤษพื้นฐาน (English Practice Game)</h3>
         <img src="a8.jfif" class="project-img" alt="English Game">
+        <p class="muted">เว็บเกมเพื่อการศึกษาสำหรับฝึกทักษะภาษาอังกฤษและคำศัพท์พื้นฐาน</p>
         <ul class="nice-bullets">
           <li>โหมดฝึกคำศัพท์พื้นฐาน (Vocabulary) พร้อมคะแนนและเฉลย</li>
           <li>แบบฝึก Multiple Choice และ Spelling</li>
@@ -146,15 +169,16 @@
     <!-- Activities -->
     <section id="activities">
       <h2 class="section-title">กิจกรรมที่เคยทำ (Activities)</h2>
-      <div class="card center">
-        <ul class="nice-bullets" style="text-align:left;display:inline-block">
+      <article class="card">
+        <h3>โครงการสอนน้องและการจัดการขยะอย่างถูกวิธี</h3>
+        <img src="a7.jfif" class="project-img" alt="กิจกรรมอบรมการจัดการขยะ">
+        <p class="muted">ภาพกิจกรรม: อบรมและสอนน้อง ๆ เรื่องการจัดการขยะ และกิจกรรมพัฒนาทักษะระดับประถมศึกษา</p>
+        <ul class="nice-bullets">
           <li>พาน้อง ๆ เข้าร่วมอบรมเรื่อง <strong>การจัดการและการคัดแยกขยะอย่างถูกวิธี</strong></li>
           <li>เข้าร่วมแข่งขัน <strong>วาดภาพและออกแบบรถเก็บขยะเชิงสร้างสรรค์</strong></li>
           <li>รับหน้าที่เป็น <strong>ช่างภาพและพิธีกร</strong> ในโครงการสอนน้องระดับประถมศึกษา</li>
         </ul>
-        <img src="a7.jfif" alt="กิจกรรมอบรมการจัดการขยะ" style="width:100%;max-width:700px;border-radius:14px;margin-top:14px">
-        <p class="muted">ภาพกิจกรรม: อบรมและสอนน้อง ๆ เรื่องการจัดการขยะ</p>
-      </div>
+      </article>
     </section>
 
     <!-- Education -->
