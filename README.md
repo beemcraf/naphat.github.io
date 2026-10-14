@@ -35,17 +35,27 @@
   - Admin Dashboard สำหรับจัดการคิวนัดหมายและดูสถานะลูกค้า
 - **Tech Stack:** `React 19`, `TypeScript`, `Tailwind CSS`, `Node.js`, `Express`, `Motion`, `Gemini API`
 
-### 2. 🩺 ระบบทำนายโรคตับ (Liver Disease Predictor)
+### 2. ☕ Daily Brew (Specialty Coffee & Roastery E-Commerce)
+- **ประเภท:** E-Commerce Web Application • [เข้าชมเว็บไซต์จริง](https://beemcraf.github.io/daily-brew/)
+- **รายละเอียด:** เว็บแอปพลิเคชันสั่งซื้อกาแฟสเปเชียลตี้และเมล็ดกาแฟ Single Origin ออนไลน์ พร้อมระบบสมาชิกและกลยุทธ์แบรนด์
+- **ฟังก์ชันเด่น:**
+  - Specialty Coffee Menu พร้อมระบบตะกร้าสินค้า (Cart & Checkout)
+  - Mood-Based Coffee Quiz ค้นหากาแฟที่เข้ากับอารมณ์และไลฟ์สไตล์ในแต่ละวัน
+  - VIP Club Membership & Loyalty Points สะสมแต้มและรับสิทธิ์ส่วนลด
+  - Coffee Subscription Packages (Daily Pass) และ Brand Marketing Strategy Modal
+- **Tech Stack:** `HTML5`, `CSS3 (Responsive)`, `JavaScript (ES6+)`, `Font Awesome`, `GitHub Pages`
+
+### 3. 🩺 ระบบทำนายโรคตับ (Liver Disease Predictor)
 - **ประเภท:** Machine Learning / Data Science
 - **รายละเอียด:** ระบบจำแนกและทำนายความเสี่ยงโรคตับจากข้อมูลสุขภาพและผลตรวจทางการแพทย์
 - **Tech Stack:** `Python`, `Scikit-learn`, `Pandas`, `NumPy`, `HTML/CSS`
 
-### 3. 👟 ออกแบบเว็บขายรองเท้า (Shoe Shop E-Commerce Prototype)
+### 4. 👟 ออกแบบเว็บขายรองเท้า (Shoe Shop E-Commerce Prototype)
 - **ประเภท:** UI/UX Design & Prototyping
 - **รายละเอียด:** ออกแบบโครงร่างหน้าเว็บร้านขายรองเท้าและระบบสั่งซื้อแบบ E-Commerce เน้นความสะดวก สบายตา และใช้งานง่าย
 - **Tech Stack:** `Figma`, `Wireframe & Prototype`, `HTML5`, `CSS3`
 
-### 4. 🎮 เกมฝึกภาษาอังกฤษพื้นฐาน (English Practice Game)
+### 5. 🎮 เกมฝึกภาษาอังกฤษพื้นฐาน (English Practice Game)
 - **ประเภท:** Educational Web Game
 - **รายละเอียด:** เกมฝึกคำศัพท์ภาษาอังกฤษ มีโหมด Multiple Choice และ Spelling พร้อมระบบปรับระดับความยากและสถิติคะแนน
 - **Tech Stack:** `JavaScript`, `HTML5`, `CSS3`

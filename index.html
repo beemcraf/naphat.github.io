@@ -1,64 +1,278 @@
 <!doctype html>
 <html lang="th">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>beemcraf | GitHub.io Portfolio</title>
-  <meta name="description" content="Portfolio ของ Naphat Wapeesiri – นักศึกษามหาวิทยาลัยราชภัฏอุดรธานี สนใจด้าน AI, Data, Web Development และ Cybersecurity"/>
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Prompt:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <meta name="description"
+    content="Portfolio ของ Naphat Wapeesiri – นักศึกษามหาวิทยาลัยราชภัฏอุดรธานี สนใจด้าน AI, Data, Web Development และ Cybersecurity" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Prompt:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    :root{
-      --bg:#f6f7fa; --card:#ffffff; --text:#17181c; --muted:#748095; --accent:#353b45;
-      --border:#e6e8ee; --pill:#eef1f7; --shadow:0 8px 26px rgba(0,0,0,.06);
+    :root {
+      --bg: #f6f7fa;
+      --card: #ffffff;
+      --text: #17181c;
+      --muted: #748095;
+      --accent: #353b45;
+      --border: #e6e8ee;
+      --pill: #eef1f7;
+      --shadow: 0 8px 26px rgba(0, 0, 0, .06);
     }
-    [data-theme="dark"]{
-      --bg:#17181c; --card:#1f2330; --text:#f2f4f8; --muted:#aab3c5; --accent:#d8deea;
-      --border:#2a2f3d; --pill:#222838; --shadow:0 8px 26px rgba(0,0,0,.38);
+
+    [data-theme="dark"] {
+      --bg: #17181c;
+      --card: #1f2330;
+      --text: #f2f4f8;
+      --muted: #aab3c5;
+      --accent: #d8deea;
+      --border: #2a2f3d;
+      --pill: #222838;
+      --shadow: 0 8px 26px rgba(0, 0, 0, .38);
     }
-    *{box-sizing:border-box;transition:color .2s,background .2s,border-color .2s,opacity .2s}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Sarabun',system-ui,Segoe UI,Arial}
-    a{color:var(--accent);text-decoration:none}
-    .container{width:min(960px,92%);margin:auto}
-    section{padding:32px 0}
-    h1,h2,h3{margin:0 0 10px}
-    h2.section-title{font-family:'Prompt';font-size:24px;font-weight:700;border-left:4px solid var(--accent);padding-left:12px;margin-bottom:16px}
-    header.site{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
-      background:rgba(255,255,255,.85);border-bottom:1px solid var(--border);padding:10px 0}
-    [data-theme="dark"] header.site{background:rgba(0,0,0,.72)}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .brand{font-family:'Prompt';font-weight:700;display:flex;gap:8px;align-items:center}
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#9096a6,#c7ccda)}
-    .nav a{margin:0 8px;color:var(--text);opacity:.85;font-size:14px}
-    .nav a:hover{opacity:1}
-    .theme-toggle{border:none;background:none;cursor:pointer;font-size:1.1rem;color:var(--text)}
-    .grid{display:grid;gap:16px}
-    .grid.cols-1{grid-template-columns:1fr}
-    .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-    .card > * + *{margin-top:12px}
-    .card p{margin:0;line-height:1.85}
-    .muted{color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;
-      border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);font-size:14px}
-    .btn:hover{background:var(--accent);color:#fff}
-    .project-img{width:100%;display:block;border-radius:14px;object-fit:cover;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-    .nice-bullets{margin:6px 0 0 18px;line-height:1.75}
-    .contact-list{list-style:none;padding:0;margin:0}
-    .contact-list li{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--border)}
-    .contact-list li:last-child{border-bottom:none}
-    .contact-list a{color:var(--text);text-decoration:none}
-    .contact-list a:hover{color:#4e6cff}
-    footer{padding:36px 0 18px;color:var(--muted);border-top:1px solid var(--border);text-align:center;font-size:14px}
-    .center{text-align:center}
-    img.round{border-radius:50%;width:150px;height:150px;object-fit:cover}
+
+    * {
+      box-sizing: border-box;
+      transition: color .2s, background .2s, border-color .2s, opacity .2s
+    }
+
+    html,
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Sarabun', system-ui, Segoe UI, Arial
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    .container {
+      width: min(960px, 92%);
+      margin: auto
+    }
+
+    section {
+      padding: 32px 0
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 10px
+    }
+
+    h2.section-title {
+      font-family: 'Prompt';
+      font-size: 24px;
+      font-weight: 700;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      margin-bottom: 16px
+    }
+
+    header.site {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, .85);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 0
+    }
+
+    [data-theme="dark"] header.site {
+      background: rgba(0, 0, 0, .72)
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px
+    }
+
+    .brand {
+      font-family: 'Prompt';
+      font-weight: 700;
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .brand .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #9096a6, #c7ccda)
+    }
+
+    .nav a {
+      margin: 0 8px;
+      color: var(--text);
+      opacity: .85;
+      font-size: 14px
+    }
+
+    .nav a:hover {
+      opacity: 1
+    }
+
+    .theme-toggle {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--text)
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px
+    }
+
+    .grid.cols-1 {
+      grid-template-columns: 1fr
+    }
+
+    .grid.cols-2 {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow)
+    }
+
+    .card>*+* {
+      margin-top: 12px
+    }
+
+    .card p {
+      margin: 0;
+      line-height: 1.85
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      font-size: 14px
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: #fff
+    }
+
+    .project-img {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .06)
+    }
+
+    .nice-bullets {
+      margin: 6px 0 0 18px;
+      line-height: 1.75
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border)
+    }
+
+    .contact-list li:last-child {
+      border-bottom: none
+    }
+
+    .contact-list a {
+      color: var(--text);
+      text-decoration: none
+    }
+
+    .contact-list a:hover {
+      color: #4e6cff
+    }
+
+    footer {
+      padding: 36px 0 18px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 14px
+    }
+
+    .center {
+      text-align: center
+    }
+
+    img.round {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover
+    }
+
     /* Education bullets */
-    .edu-list{list-style:none;margin:0;padding:0}
-    .edu-list li{display:flex;gap:12px;align-items:flex-start;margin:14px 0;line-height:1.75}
-    .edu-list .dot{width:10px;height:10px;border-radius:50%;background:#2ecc71;margin-top:8px;flex-shrink:0}
-    .edu-list .edu-meta{color:var(--muted);margin-top:2px;display:block}
+    .edu-list {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    .edu-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin: 14px 0;
+      line-height: 1.75
+    }
+
+    .edu-list .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #2ecc71;
+      margin-top: 8px;
+      flex-shrink: 0
+    }
+
+    .edu-list .edu-meta {
+      color: var(--muted);
+      margin-top: 2px;
+      display: block
+    }
   </style>
 </head>
+
 <body>
   <header class="site">
     <div class="container nav">
@@ -83,9 +297,11 @@
     <section id="intro" class="grid cols-2">
       <div class="card">
         <h1>สวัสดีครับ ผมชื่อ <span style="font-weight:700;color:var(--accent)">Naphat Wapeesiri</span></h1>
-        <p class="muted">นักศึกษาปีที่ 3 คณะวิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏอุดรธานี (UDRU)<br>สนใจด้าน AI, Data Science, Web Dev และ Cybersecurity</p>
+        <p class="muted">นักศึกษาปีที่ 4 คณะวิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏอุดรธานี
+          (UDRU)<br>สนใจด้าน AI, Data Science, Web Dev และ Cybersecurity</p>
         <div>
-          <a class="btn" href="https://github.com/beemcraf" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a class="btn" href="https://github.com/beemcraf" target="_blank"><i class="fa-brands fa-github"></i>
+            GitHub</a>
           <a class="btn" href="#contact"><i class="fa-solid fa-envelope"></i> ติดต่อ</a>
         </div>
       </div>
@@ -99,8 +315,10 @@
     <section id="about">
       <h2 class="section-title">เกี่ยวกับฉัน (About Me)</h2>
       <div class="card">
-        <p><strong>ผมชื่อ นายณภัทร วาปีศิริ</strong> (ชื่อเล่น: บีม) ปัจจุบันกำลังศึกษาอยู่ที่
-        <strong>มหาวิทยาลัยราชภัฏอุดรธานี</strong> และมุ่งมั่นเติบโตในสายงาน <strong>เทคโนโลยีสารสนเทศ (IT)</strong></p>
+        <p><strong>สวัสดีครับผมชื่อ นายณภัทร วาปีศิริ</strong> (ชื่อเล่น: บีม) ปัจจุบันกำลังศึกษาอยู่ที่
+          <strong>มหาวิทยาลัยราชภัฏอุดรธานี</strong> <br>และมุ่งมั่นเติบโตในสายงาน <strong>เทคโนโลยีสารสนเทศ
+            (IT)</strong>
+        </p>
         <p class="muted">จุดแข็ง: รับผิดชอบสูง ใฝ่เรียนรู้ และพัฒนาทักษะอย่างต่อเนื่อง โดยเฉพาะด้านเทคโนโลยี</p>
       </div>
     </section>
@@ -111,7 +329,8 @@
       <div class="grid cols-2">
         <div class="card">
           <h3>Programming & Web Development</h3>
-          <p>JavaScript, TypeScript, React, HTML5 / CSS3, Tailwind CSS, PHP, Python, SQL, Java (พื้นฐาน), C Language (พื้นฐาน)</p>
+          <p>JavaScript, TypeScript, React, HTML5 / CSS3, Tailwind CSS, PHP, Python, SQL, Java (พื้นฐาน), C Language
+            (พื้นฐาน)</p>
         </div>
         <div class="card">
           <h3>Tools & Technologies</h3>
@@ -126,13 +345,31 @@
       <article class="card">
         <h3>ระบบจองบริการนวดแผนไทยและสปาระดับพรีเมียม (Chang Thai Booking Portal)</h3>
         <img src="chang-thai-booking.png" class="project-img" alt="Chang Thai Booking Portal">
-        <p class="muted">เว็บแอปพลิเคชันระบบจองบริการนวดแผนไทยและสปาแบบครบวงจรสำหรับ Chang Thai Authentic Thai Bodywork (Park Ridge, IL)</p>
+        <p class="muted">เว็บแอปพลิเคชันระบบจองบริการนวดแผนไทยและสปาแบบครบวงจรสำหรับ Chang Thai Authentic Thai Bodywork
+          (Park Ridge, IL)</p>
         <ul class="nice-bullets">
-          <li><strong>Multi-Step Booking Flow:</strong> ระบบขั้นตอนการจองแบบ 5 สเต็ป (Services → Duration → Time → Details → Confirm) พร้อมแถบแสดงความคืบหน้า (Progress Bar)</li>
-          <li><strong>Treatment Category & Live Search:</strong> จัดหมวดหมู่บริการ (Master Rituals, Signature, Essential Care, Express Focus) พร้อมระบบค้นหาทรีตเมนต์แบบเรียลไทม์</li>
-          <li><strong>Dynamic Duration & Pricing:</strong> เลือกระยะเวลานวด (60 / 90 / 120 นาที) และแสดงช่วงราคาที่ปรับเปลี่ยนตามเวลาที่เลือก</li>
-          <li><strong>Time Slot & Admin Management:</strong> ระบบเลือกวัน-เวลา ตรวจสอบช่วงเวลาว่าง ป้องกันการจองซ้ำ และแดชบอร์ดจัดการคิว</li>
-          <li><strong>Tech Stack:</strong> React 19, TypeScript, Tailwind CSS, Express, Node.js, Lucide Icons, Motion</li>
+          <li><strong>Multi-Step Booking Flow:</strong> ระบบขั้นตอนการจองแบบ 5 สเต็ป (Services → Duration → Time →
+            Details → Confirm) พร้อมแถบแสดงความคืบหน้า (Progress Bar)</li>
+          <li><strong>Treatment Category & Live Search:</strong> จัดหมวดหมู่บริการ (Master Rituals, Signature, Essential
+            Care, Express Focus) พร้อมระบบค้นหาทรีตเมนต์แบบเรียลไทม์</li>
+          <li><strong>Dynamic Duration & Pricing:</strong> เลือกระยะเวลานวด (60 / 90 / 120 นาที)
+            และแสดงช่วงราคาที่ปรับเปลี่ยนตามเวลาที่เลือก</li>
+          <li><strong>Time Slot & Admin Management:</strong> ระบบเลือกวัน-เวลา ตรวจสอบช่วงเวลาว่าง ป้องกันการจองซ้ำ
+            และแดชบอร์ดจัดการคิว</li>
+          <li><strong>Tech Stack:</strong> React 19, TypeScript, Tailwind CSS, Express, Node.js, Lucide Icons, Motion
+          </li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>ร้านกาแฟสเปเชียลตี้และระบบสั่งซื้อออนไลน์ (Daily Brew)</h3>
+        <img src="daily-brew.jpg" class="project-img" alt="Daily Brew Coffee & Roastery">
+        <p class="muted">เว็บแอปพลิเคชันร้านกาแฟ Specialty Coffee และระบบสั่งซื้อออนไลน์เดลิเวอรี พร้อมระบบสมาชิกและกลยุทธ์แบรนด์ดิจิทัล • <a href="https://beemcraf.github.io/daily-brew/" target="_blank" style="text-decoration:underline;color:#4e6cff;"><i class="fa-solid fa-arrow-up-right-from-square"></i> เข้าชมเว็บไซต์จริง (Live Demo)</a></p>
+        <ul class="nice-bullets">
+          <li><strong>Specialty Coffee Menu & Online Cart:</strong> ระบบเลือกซื้อเมล็ดกาแฟ Single Origin, เมนูกาแฟสเปเชียลตี้ และเบเกอรี พร้อมระบบตะกร้าสินค้าและการคำนวณราคาอัตโนมัติ</li>
+          <li><strong>Mood-Based Coffee Quiz:</strong> ฟังก์ชันแบบทดสอบค้นหากาแฟที่เข้ากับอารมณ์และสไตล์ของผู้ใช้ในแต่ละวัน (Coffee Matchmaking)</li>
+          <li><strong>VIP Club & Points System:</strong> ระบบสมัครสมาชิก VIP รับส่วนลด 20% พร้อมหน้าตรวจสอบประวัติการสั่งซื้อและคะแนนสะสม</li>
+          <li><strong>Subscriptions & Marketing Deck:</strong> แพ็กเกจกาแฟรายเดือน (Daily Pass) พร้อมหน้าพรีเซนต์กลยุทธ์การตลาดดิจิทัล (Brand Strategy)</li>
+          <li><strong>Tech Stack:</strong> HTML5, CSS3, JavaScript (ES6+), Font Awesome, GitHub Pages</li>
         </ul>
       </article>
       <article class="card">
@@ -146,7 +383,8 @@
       </article>
       <article class="card">
         <h3>ระบบทำนายโรคตับ (Liver Disease Predictor)</h3>
-        <img src="a6.png" class="project-img" alt="Liver Disease Predictor" style="max-width: 380px; margin: 12px auto;">
+        <img src="a6.png" class="project-img" alt="Liver Disease Predictor"
+          style="max-width: 380px; margin: 12px auto;">
         <p class="muted">โมเดล Machine Learning สำหรับวิเคราะห์และทำนายความเสี่ยงโรคตับจากข้อมูลสุขภาพ</p>
         <ul class="nice-bullets">
           <li>เตรียมและวิเคราะห์ชุดข้อมูลทางการแพทย์ (Data Preprocessing & Data Cleaning)</li>
@@ -188,10 +426,26 @@
         <div class="card">
           <h3>ประวัติการศึกษา</h3>
           <ul class="edu-list">
-            <li><div class="dot"></div><div><strong>ระดับประถม:</strong> โรงเรียนบ้านขมิ้นบ่อโคลน <span class="edu-meta">2554 • เกรดเฉลี่ย 3.43</span></div></li>
-            <li><div class="dot"></div><div><strong>ระดับมัธยมต้น:</strong> โรงเรียนอุดรธานีพิทยาคม <span class="edu-meta">2560 • เกรดเฉลี่ย 3.40</span></div></li>
-            <li><div class="dot"></div><div><strong>ระดับ ปวช.:</strong> วิทยาลัยเทคนิคอุดรธานี <span class="edu-meta">2563 • เกรดเฉลี่ย 3.55</span></div></li>
-            <li><div class="dot"></div><div><strong>กำลังศึกษาอยู่:</strong> มหาวิทยาลัยราชภัฏอุดรธานี <span class="edu-meta">2566 – ปัจจุบัน • เกรดเฉลี่ย 3.33</span></div></li>
+            <li>
+              <div class="dot"></div>
+              <div><strong>ระดับประถม:</strong> โรงเรียนบ้านขมิ้นบ่อโคลน <span class="edu-meta">2554 • เกรดเฉลี่ย
+                  3.43</span></div>
+            </li>
+            <li>
+              <div class="dot"></div>
+              <div><strong>ระดับมัธยมต้น:</strong> โรงเรียนอุดรธานีพิทยาคม <span class="edu-meta">2560 • เกรดเฉลี่ย
+                  3.40</span></div>
+            </li>
+            <li>
+              <div class="dot"></div>
+              <div><strong>ระดับ ปวช.:</strong> วิทยาลัยเทคนิคอุดรธานี <span class="edu-meta">2563 • เกรดเฉลี่ย
+                  3.55</span></div>
+            </li>
+            <li>
+              <div class="dot"></div>
+              <div><strong>กำลังศึกษาอยู่:</strong> มหาวิทยาลัยราชภัฏอุดรธานี <span class="edu-meta">2566 – ปัจจุบัน •
+                  เกรดเฉลี่ย 3.33</span></div>
+            </li>
           </ul>
         </div>
         <div class="card">
@@ -227,7 +481,7 @@
       <div class="card">
         <h3>เป้าหมายในอนาคต</h3>
         <p class="muted">
-          สนใจเส้นทางสายงานด้าน IT/Tech โดยเฉพาะในสาขา AI, Data Science, Cybersecurity และ Web Development  
+          สนใจเส้นทางสายงานด้าน IT/Tech โดยเฉพาะในสาขา AI, Data Science, Cybersecurity และ Web Development
           มุ่งมั่นพัฒนาทักษะเพื่อพร้อมสำหรับการทำงานจริง และต่อยอดสู่นักพัฒนาซอฟต์แวร์มืออาชีพในอนาคต
         </p>
       </div>
@@ -239,10 +493,13 @@
       <div class="grid cols-2">
         <div class="card">
           <ul class="contact-list">
-            <li><i class="fa-regular fa-envelope"></i> <a href="mailto:naphatbeem9@gmail.com">naphatbeem9@gmail.com</a></li>
+            <li><i class="fa-regular fa-envelope"></i> <a href="mailto:naphatbeem9@gmail.com">naphatbeem9@gmail.com</a>
+            </li>
             <li><i class="fa-brands fa-facebook"></i> บีม ม.</li>
-            <li><i class="fa-brands fa-instagram"></i> <a href="https://instagram.com/_naphat_beem" target="_blank">_naphat_beem</a></li>
-            <li><i class="fa-brands fa-github"></i> <a href="https://github.com/beemcraf" target="_blank">github.com/beemcraf</a></li>
+            <li><i class="fa-brands fa-instagram"></i> <a href="https://instagram.com/_naphat_beem"
+                target="_blank">_naphat_beem</a></li>
+            <li><i class="fa-brands fa-github"></i> <a href="https://github.com/beemcraf"
+                target="_blank">github.com/beemcraf</a></li>
             <li><i class="fa-solid fa-phone"></i> 096-997-1310</li>
             <li><i class="fa-solid fa-location-dot"></i> ต.กุดสระ อ.เมือง จ.อุดรธานี</li>
           </ul>
@@ -263,15 +520,16 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     const btn = document.getElementById('toggleTheme');
-    function setTheme(mode){
+    function setTheme(mode) {
       document.documentElement.setAttribute('data-theme', mode);
       localStorage.setItem('theme', mode);
-      btn.innerHTML = mode==='light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+      btn.innerHTML = mode === 'light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     }
     setTheme(localStorage.getItem('theme') || 'light');
-    btn.addEventListener('click', ()=> {
-      const isDark = document.documentElement.getAttribute('data-theme')==='dark';
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
       setTheme(isDark ? 'light' : 'dark');
     });
   </script>
-</
+</body>
+</html>
