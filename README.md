@@ -22,12 +22,6 @@
 เว็บไซต์นี้เป็น **Portfolio & Resume ออนไลน์** ของ **นายณภัทร วาปีศิริ (บีม)** นักศึกษาชั้นปีที่ 3 สาขาเทคโนโลยีสารสนเทศ (IT) มหาวิทยาลัยราชภัฏอุดรธานี  
 สร้างขึ้นเพื่อรวบรวมและนำเสนอประวัติการศึกษา, ทักษะความเชี่ยวชาญด้านไอที, กิจกรรม, และผลงานการพัฒนาซอฟต์แวร์/เว็บไซต์ เหมาะสำหรับใช้ยื่นนำเสนอต่ออาจารย์, การสมัครสหกิจศึกษา, และการสมัครงานในสายงาน **Web Developer / Software Engineer**
 
-### ✨ จุดเด่นของเว็บไซต์ (Features)
-- 🌓 **รองรับ Dark / Light Mode:** สลับธีมสว่างและมืดได้ตามต้องการ พร้อมจำค่าที่เลือกไว้ผ่าน LocalStorage
-- 📱 **Fully Responsive Design:** จัดวางหน้าจอแบบ Grid & Flexbox สวยงาม รองรับทั้งมือถือ แท็บเล็ต และคอมพิวเตอร์
-- ⚡ **Lightweight & Fast:** พัฒนาด้วย Pure HTML/CSS และ Vanilla JavaScript โหลดเร็ว ไม่ต้องพึ่งพาเฟรมเวิร์กขนาดใหญ่
-- 🎨 **Modern Minimalist UI:** ใช้โทนสีเรียบหรู ฟอนต์ Prompt & Sarabun อ่านง่าย สบายตา และมีไอคอนจาก Font Awesome
-
 ---
 
 ## 🚀 ผลงานเด่นที่จัดแสดงในเว็บไซต์ (Featured Projects)
@@ -70,45 +64,11 @@
 
 ---
 
-## 📂 โครงสร้างโปรเจกต์ (Project Structure)
-
-```text
-naphat.github.io/
-├── index.html               # ไฟล์โครงสร้างหลักของหน้าเว็บ Portfolio
-├── README.md                # เอกสารแนะนำโปรเจกต์
-├── .gitignore               # กำหนดไฟล์ที่ไม่ต้องการให้ Git ติดตาม
-├── chang-thai-booking.png   # ภาพตัวอย่างผลงาน Chang Thai Booking Portal
-├── a1.jpg - a4.jpg          # ภาพใบรับรอง และรูปโปรไฟล์
-├── a5.png - a8.jfif         # ภาพผลงาน Shoe Shop, Liver Predictor, กิจกรรม และเกม
-```
-
----
-
-## 💻 วิธีเปิดใช้งานในเครื่อง (Local Setup)
-
-หากต้องการดึงโปรเจกต์นี้ไปทดสอบหรือแก้ไขบนเครื่องของคุณ:
-
-1. **Clone คลังโปรเจกต์:**
-   ```bash
-   git clone https://github.com/beemcraf/naphat.github.io.git
-   ```
-
-2. **เปิดเข้าไปในโฟลเดอร์:**
-   ```bash
-   cd naphat.github.io
-   ```
-
-3. **เปิดใช้งานหน้าเว็บ:**
-   - ดับเบิลคลิกไฟล์ `index.html` เพื่อเปิดผ่านเบราว์เซอร์ได้ทันที
-   - หรือเปิดด้วยส่วนขยาย **Live Server** บน VS Code เพื่อความสะดวกในการแก้ไขแบบเรียลไทม์
-
----
-
 ## 📬 ช่องทางการติดต่อ (Contact)
 
 - 👤 **ผู้จัดทำ:** นายณภัทร วาปีศิริ (Naphat Wapeesiri)
 - 🎓 **กำลังศึกษา:** คณะวิทยาศาสตร์ สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏอุดรธานี
-- 📧 **Email:** [pomsanbeem9@gmail.com](mailto:pomsanbeem9@gmail.com)
+- 📧 **Email:** [naphatbeem9@gmail.com](mailto:naphatbeem9@gmail.com)
 - 🐙 **GitHub:** [github.com/beemcraf](https://github.com/beemcraf)
 - 📸 **Instagram:** [@_naphat_beem](https://instagram.com/_naphat_beem)
 - 📞 **เบอร์โทรศัพท์:** 096-997-1310
